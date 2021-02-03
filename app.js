@@ -12,6 +12,9 @@ app.engine('html', es6Renderer); //if you need an engine for html, use es6Render
 app.set('views', 'templates'); //telling it where our views will be (templates folder)
 app.set('view engine', 'html') //when you load your view engine, call the html engine (defined on line 12)
 
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false}));
 app.use(express.static('public'));
 
 const SERVER = HTTP.createServer(app);
